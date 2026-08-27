@@ -9,6 +9,9 @@ import EducationSection from '@/components/public/EducationSection'
 import Publications from '@/components/public/Publications'
 import Contact from '@/components/public/Contact'
 
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
+
 export default async function Home() {
   const { data: profileData } = await supabase.from('profile').select('*').single()
   const { data: projectsData } = await supabase.from('projects').select('*').order('display_order')
